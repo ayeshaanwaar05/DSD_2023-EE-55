@@ -3,3 +3,4 @@ the following output on the tri-color LED.
 a > b P urple
 a = b Y ellow
 a < b Cyan
+.
