@@ -122,7 +122,7 @@ module anode_decoder(
     output logic [7:0]an
     
 );
-    //logic en0, en1, en2, en3, en4, en5,en6,en7;
+    
     always_comb
     begin
             case(final_sel)
@@ -277,26 +277,77 @@ module freq_divider(
 );
 
 logic clk1,clk2,clk3,clk4,clk5,clk6,clk7,clk8,clk9,clk10,clk11,clk12,clk13,clk14,clk15,clk16;   
-    t_ff ff_1(.t_out(clk1),.clk(clk));
-    t_ff ff_2(.t_out(clk2),.clk(clk1));
-    t_ff ff_3(.t_out(clk3),.clk(clk2));
-    t_ff ff_4(.t_out(clk4),.clk(clk3));   
-    t_ff ff_5(.t_out(clk5),.clk(clk4));   
-    t_ff ff_6(.t_out(clk6),.clk(clk5));   
-    t_ff ff_7(.t_out(clk7),.clk(clk6));    
-    t_ff ff_8(.t_out(clk8),.clk(clk7));   
-    t_ff ff_9(.t_out(clk9),.clk(clk8));   
-    t_ff ff_10(.t_out(clk10),.clk(clk9));
-    t_ff ff_11(.t_out(clk11),.clk(clk10));
-    t_ff ff_12(.t_out(clk12),.clk(clk11));   
-    t_ff ff_13(.t_out(clk13),.clk(clk12));   
-    t_ff ff_14(.t_out(clk14),.clk(clk13));   
-    t_ff ff_15(.t_out(clk15),.clk(clk14));   
-    t_ff ff_16(.t_out(clk16),.clk(clk15));      
-    t_ff ff_17(.t_out(clock),.clk(clk16));
+    toggle_ff ff_1(
+	    .t_out(clk1),
+	    .clk(clk)
+    );
+    toggle_ff ff_2(
+	    .t_out(clk2),
+	    .clk(clk1)
+    );
+    toggle_ff ff_3(
+	    .t_out(clk3),
+	    .clk(clk2)
+    );
+    toggle_ff ff_4(
+	    .t_out(clk4),
+	    .clk(clk3)
+    );   
+    toggle_ff ff_5(
+	    .t_out(clk5),
+	    .clk(clk4)
+    );   
+    toggle_ff ff_6(
+	    .t_out(clk6),
+	    .clk(clk5)
+    );   
+    toggle_ff ff_7(
+	    .t_out(clk7),
+	    .clk(clk6)
+    );    
+    toggle_ff ff_8(
+	    .t_out(clk8),
+	    .clk(clk7)
+    );   
+    toggle_ff ff_9(
+	    .t_out(clk9),
+	    .clk(clk8)
+    );   
+    toggle_ff ff_10(
+	    .t_out(clk10),
+	    .clk(clk9)
+    );
+    toggle_ff ff_11(
+	    .t_out(clk11),
+	    .clk(clk10)
+    );
+    toggle_ff ff_12(
+	    .t_out(clk12),
+	    .clk(clk11)
+    );   
+    toggle_ff ff_13(
+	    .t_out(clk13),
+	    .clk(clk12)
+    );   
+    toggle_ff ff_14(
+	    .t_out(clk14),
+	    .clk(clk13)
+    );   
+    toggle_ff ff_15(
+	    .t_out(clk15),
+	    .clk(clk14)
+    );   
+    toggle_ff ff_16(
+	    .t_out(clk16),
+	    .clk(clk15)
+    );      
+    toggle_ff ff_17(
+	    .t_out(clock),
+	    .clk(clk16)
+    );
 
 endmodule
-module t_ff(input logic clk,output logic t_out
+module toggle_ff(input logic clk,output logic t_out
 );
 
   initial
