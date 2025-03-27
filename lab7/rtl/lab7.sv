@@ -92,14 +92,7 @@ module lab_7 (
         .seg(seg)
     );
 
-    //assign an[7] = write | an[7];
-    //assign an[6] = write | an[6];
-    //assign an[5] = write | an[5];
-    //assign an[4] = write | an[4];
-    //assign an[3] = write | an[3];
-    //assign an[2] = write | an[2];
-    //assign an[1] = write | an[1];
-    //assign an[0] = write | an[0];
+    
     
 endmodule
 module sel(
@@ -145,14 +138,7 @@ module anode_decoder(
             endcase
         end
     
-   // assign en0=write&(~an[0]);
-   // assign en1=write&(~an[1]);
-   // assign en2=write&(~an[2]);
-   // assign en3=write&(~an[3]);
-   // assign en4=write&(~an[4]);
-   // assign en5=write&(~an[5]);
-   // assign en6=write&(~an[6]);
-   // assign en7=write&(~an[7]);
+  
 endmodule
 module enabler(output logic[7:0]en, input logic[2:0]sel, logic write
 );
