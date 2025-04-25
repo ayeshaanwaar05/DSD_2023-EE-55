@@ -366,7 +366,7 @@ endmodule
 module counter(input logic clock,reset,output logic [2:0]count_sel
 );
 	
-	always_ff @ (posedge clock)
+	always_ff @ (posedge clk)
 	begin
 	 if (reset)
 		count_sel <= 0;
