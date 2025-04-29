@@ -335,11 +335,11 @@ logic clk1,clk2,clk3,clk4,clk5,clk6,clk7,clk8,clk9,clk10,clk11,clk12,clk13,clk14
     );   
     toggle_ff ff_15(
 	    .t_out(clk15),
-	    .clk(clk4)
+	    .clk(clk14)
     );   
     toggle_ff ff_16(
-	    .t_out(clk15),
-	    .clk(clk5)
+	    .t_out(clk16),
+	    .clk(clk15)
     );      
     toggle_ff ff_17(
 	    .t_out(clock),
@@ -366,7 +366,7 @@ endmodule
 module counter(input logic clock,reset,output logic [2:0]count_sel
 );
 	
-	always_ff @ (posedge clock)
+	always_ff @ (posedge clk)
 	begin
 	 if (reset)
 		count_sel <= 0;
